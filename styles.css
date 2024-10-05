@@ -94,3 +94,7 @@ h1 {
 #add-task-btn:active {
     background-color: rgba(248, 115, 38, 0.8);
 }
+
+.line-through {
+    text-decoration: line-through;
+}
