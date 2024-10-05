@@ -70,6 +70,8 @@ Array.from(checkboxes).forEach((checkbox) => {
             checkbox.parentElement.classList.add('line-through');
             let checkboxParent = checkbox.parentElement;
             checkboxParent.parentElement.style.backgroundColor = 'lightgreen';
+            let nextSibling = checkbox.nextSibling;
+            nextSibling.style.backgroundColor = 'lightgreen';
             
         } else {
             checkbox.parentElement.classList.remove('line-through');
@@ -95,8 +97,8 @@ function taskAddedNotification() {
 function taskDeletedNotification() {
     notificationDiv.style.opacity = '100%'
     notificationDiv.style.fontSize = '1.5rem'
-    notificationDiv.style.backgroundColor = 'red';
-    notificationDiv.style.color = 'darkred';
+    notificationDiv.style.backgroundColor = 'orange';
+    notificationDiv.style.color = '#cb2704';
     notificationDiv.textContent = 'Task removed!';
     setTimeout(() => {
         notificationDiv.style.opacity = '0%';
