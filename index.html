@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>ToDo List</title>
 </head>
 <body>
     <div id="container">
-    <h1>To-Do List 📃</h1>
+    <h1>To-Do List 📋</h1>
     <div id="input-btn-div">
         <input id="new-task-input" type="text" placeholder="Add your task">
         <button id="add-task-btn">Add</button>
     </div>
     <div id="task-container">
         <div class="task-div">
-            <label for="checkbox1"><input id="checkbox1" type="checkbox">Learn TypeScript</label>
-            <button id="button1">x</button>
+            <label class="text-label" for="checkbox"><input class="checkbox" type="checkbox">Learn TypeScript</label>
+            <button class="delete-btn" onclick="deleteTask(this)">x</button>
         </div>
     </div>
     </div>
