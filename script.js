@@ -1,6 +1,7 @@
 const addButton = document.getElementById("add-task-btn");
 const taskContainer = document.getElementById("task-container");
 const taskField = document.getElementById("new-task-input");
+const clearTaskButton = document.getElementById("clear-tasks-btn");
 let deleteBtns = document.getElementsByClassName('delete-btn');
 let checkboxes = document.getElementsByClassName('checkbox');
 
@@ -32,6 +33,10 @@ function addTask() {
         alert(`Task field can't be empty!`)
     }
 };
+
+clearTaskButton.addEventListener("click", (event) => {
+    taskContainer.innerHTML = '';
+})
 
 function deleteTask(element) {
     let parentElement = element.parentElement;

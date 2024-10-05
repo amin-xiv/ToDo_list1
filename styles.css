@@ -18,7 +18,7 @@ html {
 
 #container {
     background-color: white;
-    width: 470px;
+    width: 483px;
     max-height: 90vh; 
     min-height: 90vh;
     overflow-y: auto; 
@@ -91,12 +91,26 @@ h1 {
     transition: transform 0.5s ease;
 }
 
-#add-task-btn:hover {
+#clear-tasks-btn {
+    height: 40px;
+    width: 65px;
+    margin-left: 4px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(255, 53, 17);
+    transition: transform 0.5s ease;
+}
+
+#add-task-btn:hover, #clear-tasks-btn:hover {
     transform: scale(1.1)
 }
 
 #add-task-btn:active {
     background-color: rgba(248, 115, 38, 0.8);
+}
+
+#clear-tasks-btn:active {
+    background-color: rgba(255, 53, 17, 0.8);
 }
 
 .line-through {
