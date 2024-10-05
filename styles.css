@@ -113,6 +113,23 @@ h1 {
     background-color: rgba(255, 53, 17, 0.8);
 }
 
+#task-container {
+    margin-top: 40px;
+}
+
 .line-through {
     text-decoration: line-through;
 }
+
+#notification-container {
+    opacity: 0%;
+    /* background-color: lightgreen;  */
+    color: darkgreen; 
+    width: 100%; 
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+    text-align: center; 
+    transition: opacity 0.5s ease-in-out
+}
+
