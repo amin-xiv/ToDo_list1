@@ -29,31 +29,31 @@ function addTask() {
         taskField.value = ``;
         deleteBtns = document.getElementsByClassName('delete-btn');
         checkboxes = document.getElementsByClassName('checkbox');
-        taskAddedNotification();
         addLineThrough();
+        taskAddedNotification();
     } else {
-        // alert(`Task field can't be empty!`)
+        clearTimeout(notificationTimer);
         notificationDiv.style.opacity = '100%'
         notificationDiv.style.fontSize = '1.5rem'
         notificationDiv.style.backgroundColor = 'red';
         notificationDiv.style.color = 'darkred';
         notificationDiv.textContent = 'Task Field cannot be empty!';
-        setTimeout(() => {
-            notificationDiv.style.opacity = '0%';
-        }, 1000);
+        var notificationTimer =  setTimeout(() => {
+        }, 2500);
     }
 };
 
 clearTaskButton.addEventListener("click", (event) => {
+    clearTimeout(notificationTimer);
     taskContainer.innerHTML = '';
     notificationDiv.style.opacity = '100%'
     notificationDiv.style.fontSize = '1.5rem'
     notificationDiv.style.backgroundColor = '#cb2704';
     notificationDiv.style.color = 'orange';
     notificationDiv.textContent = 'All tasks cleared!';
-    setTimeout(() => {
+    var notificationTimer =  setTimeout(() => {
         notificationDiv.style.opacity = '0%';
-    }, 1000);
+    }, 2500);
 })
 
 function deleteTask(element) {
@@ -70,6 +70,7 @@ Array.from(checkboxes).forEach((checkbox) => {
             checkbox.parentElement.classList.add('line-through');
             let checkboxParent = checkbox.parentElement;
             checkboxParent.parentElement.style.backgroundColor = 'lightgreen';
+            checkbox.parentElement.parentElement.style.backgroundColor = 'lightgreen';
             let nextSibling = checkbox.nextSibling;
             nextSibling.style.backgroundColor = 'lightgreen';
             
@@ -84,23 +85,25 @@ Array.from(checkboxes).forEach((checkbox) => {
 }
 
 function taskAddedNotification() {
+    clearTimeout(notificationTimer);
     notificationDiv.style.opacity = '100%'
     notificationDiv.style.fontSize = '1.5rem'
     notificationDiv.style.backgroundColor = 'lightgreen';
     notificationDiv.style.color = 'darkgreen';
     notificationDiv.textContent = 'Task Added!';
-    setTimeout(() => {
+    var notificationTimer =  setTimeout(() => {
         notificationDiv.style.opacity = '0%';
-    }, 1000);
+    }, 2500);
 }
 
 function taskDeletedNotification() {
+    clearTimeout(notificationTimer);
     notificationDiv.style.opacity = '100%'
     notificationDiv.style.fontSize = '1.5rem'
     notificationDiv.style.backgroundColor = 'orange';
     notificationDiv.style.color = '#cb2704';
     notificationDiv.textContent = 'Task removed!';
-    setTimeout(() => {
+    var notificationTimer =  setTimeout(() => {
         notificationDiv.style.opacity = '0%';
-    }, 1000);
+    }, 2500);
 }
